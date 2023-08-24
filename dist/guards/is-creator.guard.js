@@ -20,6 +20,7 @@ let IsCreatorGuard = exports.IsCreatorGuard = class IsCreatorGuard {
         const req = context.switchToHttp().getRequest();
         const authHeader = req.headers.authorization;
         const token = authHeader;
+        console.log("IS-CRETOR", "req", req, "AUTHHEADER", authHeader, "TOKEN", token);
         async function verify(token, jwtService) {
             try {
                 const user = await jwtService.verify(token, {

@@ -17,6 +17,9 @@ export class IsCreatorGuard implements CanActivate {
         const authHeader = req.headers.authorization;
         const token = authHeader;
 
+        console.log("IS-CRETOR","req",req,"AUTHHEADER",authHeader,"TOKEN",token);
+        
+
         async function verify(token: string, jwtService: JwtService) {
             try {
                 const user: Partial<Admin> = await jwtService.verify(token, {
